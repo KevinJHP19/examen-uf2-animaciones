@@ -4,72 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen uf2 animaciones</title>
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100%;
-            flex-direction: column;
-        }
-        h1 {
-            color: white;
-            text-align: center;
-            transition-delay: 5s;
-            animation: entrada 3s ease-out;
-        }
-        .minutos {
-            border-radius: 50%;
-            border: 2px solid white;
-            animation: entrada 2s ease-out;
-        }
-        .animacionminuto {
-            animation: rotacionMinutos 10s infinite linear;
-        }
-        .animacionhora {
-        animation: rotacionHoras 60s infinite linear;
-    }
-
-    @keyframes rotacionHoras {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-            
-        
-        @keyframes rotacionMinutos {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        
-
-        @keyframes entrada {
-            from {
-                
-                opacity: 0;
-                transform: translateY(50px); /* Comienza desde abajo */
-            }
-            to {
-                
-                opacity: 1;
-                transform: translateY(0); 
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body style="background-color: black;">
 
@@ -78,12 +14,14 @@
     <div class="minutos absoluto" 
     style="
         background-image: url(einstein.avif.jpg);
-        background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-        background-position: center; /* Centra la imagen */
-        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat; 
         width: 400px; 
-        height: 400px; /* Asegura que el contenedor tenga altura */
-        position: relative;">
+        height: 400px; 
+        position: relative;
+        z-index: 1;">
+        <div class="mensaje">El tiempo es relativo...</div>
     <svg
         class="animacionminuto" 
         style="position: absolute; z-index: 1;"
@@ -118,7 +56,7 @@
             x1="200"
             y1="200"
             x2="200"
-            y2="50"
+            y2="100"
             stroke="red"
             stroke-width="5"
             stroke-linecap="round"

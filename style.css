@@ -1,0 +1,89 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+h1 {
+    color: white;
+    text-align: center;
+    transition-delay: 5s;
+    animation: entrada 3s ease-out;
+}
+.minutos {
+    border-radius: 50%;
+    border: 2px solid white;
+    position: relative;
+    z-index: 2;
+    
+
+}
+.animacionminuto {
+    animation: rotacionMinutos 10s infinite linear;
+}
+.animacionhora {
+animation: rotacionHoras 90s infinite linear;
+}
+.mensaje {
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    box-sizing: border-box;
+
+    left: 50%; 
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    opacity: 0;
+    border-radius: 5px;
+    white-space: wrap;
+    transition: left 1s ease;  
+    
+}
+svg {
+    position: relative;
+    z-index: 3;
+}
+
+
+.minutos:hover .mensaje {
+    opacity: 70%;
+    left: 80%;
+    transform: translateY(-50%);
+    transition: 1s  ease-in-out;   
+}
+@keyframes rotacionHoras {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
+    @keyframes rotacionMinutos {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes entrada {
+        from {
+            
+            opacity: 0;
+            transform: translateY(-20px); /* Comienza desde abajo */
+        }
+        to {
+            
+            opacity: 1;
+            transform: translateY(0); 
+        }
+    }
