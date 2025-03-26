@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen uf2 animaciones</title>
     <style>
-        body{
-
+        body {
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,24 +16,37 @@
             height: 100vh;
             width: 100%;
             flex-direction: column;
-            
-            
         }
-        h1{
+        h1 {
             color: white;
             text-align: center;
+            transition-delay: 5s;
+            animation: entrada 3s ease-out;
         }
         .minutos {
-            
             border-radius: 50%;
             border: 2px solid white;
+            animation: entrada 2s ease-out;
         }
-        
-        .animacion {
-            animation: rotacion 20s infinite linear;
+        .animacionminuto {
+            animation: rotacionMinutos 10s infinite linear;
         }
+        .animacionhora {
+        animation: rotacionHoras 60s infinite linear;
+    }
+
+    @keyframes rotacionHoras {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+            
         
-        @keyframes rotacion {
+        @keyframes rotacionMinutos {
             from {
                 transform: rotate(0deg);
             }
@@ -42,28 +54,47 @@
                 transform: rotate(360deg);
             }
         }
+        
+        
+
+        @keyframes entrada {
+            from {
+                
+                opacity: 0;
+                transform: translateY(50px); /* Comienza desde abajo */
+            }
+            to {
+                
+                opacity: 1;
+                transform: translateY(0); 
+            }
+        }
     </style>
 </head>
 <body style="background-color: black;">
 
-    <h1 >Examewn m9 uf2 - Animaciones</h1>
+    <h1>Examen m9 uf2 - Animaciones</h1>
     
-    <div class="minutos absoluto  " style="background-image: url(einstein.avif.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 400px;">
-        <svg
-        class="animacion"
-       
-          width="400"
-          height="400"
-          viewBox="0 0 400 400"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <!-- manillas reloj -->
-          <line
-          
+    <div class="minutos absoluto" 
+    style="
+        background-image: url(einstein.avif.jpg);
+        background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        width: 400px; 
+        height: 400px; /* Asegura que el contenedor tenga altura */
+        position: relative;">
+    <svg
+        class="animacionminuto" 
+        style="position: absolute; z-index: 1;"
+        width="400"
+        height="400"
+        viewBox="0 0 400 400"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <line
             id="minutos"
+            class=""
             x1="200"
             y1="200"
             x2="200"
@@ -71,9 +102,19 @@
             stroke="blue"
             stroke-width="5"
             stroke-linecap="round"
-          />
-          <line
+        />
+    </svg>
+    <svg 
+        class="animacionhora" 
+        style="position: absolute; z-index: 2;"
+        width="400"
+        height="400"
+        viewBox="0 0 400 400"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <line
             id="horas"
+            class=""
             x1="200"
             y1="200"
             x2="200"
@@ -81,10 +122,9 @@
             stroke="red"
             stroke-width="5"
             stroke-linecap="round"
-          />
-        </svg>
-      </div>
-    </div>
+        />
+    </svg>
+</div>
     
 </body>
 </html>
