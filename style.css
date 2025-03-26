@@ -44,7 +44,7 @@ animation: rotacionHoras 90s infinite linear;
     opacity: 0;
     border-radius: 5px;
     white-space: wrap;
-    transition: left 1s ease;  
+    transition:  1.5s ;  
     
 }
 svg {
